@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>To-Do App</title>
+
+  <!-- ---------------- estilos compartilhados entre login e signup ---------------- -->
+  <link rel="stylesheet" href="styles/acesso.css">
+
+  <!-- ---------------------- lógica aplicada no registro -------------------- -->
+  <script src="/scripts/utils.js"></script>
+  <script src="/scripts/signup.js"></script>
+
+</head>
+
+<body>
+
+  <div class="left">
+    <img src="./assets/pessoa-signup.png" alt="">
+  </div>
+  <div class="right">
+    <form id="Register" novalidate>
+      <div class="form-header">
+        <p>To-Do App</p>
+      </div>
+
+      <label>
+        Nome:
+        <input id="Name" type="text" name="nome">
+        <span class="error" id="ErrorName"></span>
+      </label>
+      <label>
+        Apelido:
+        <input id="Nickname" type="text" name="Apelido">
+        <span class="error" id="ErrorNickname"></span>
+      </label>
+      <label>
+        Email:
+        <input id="Email" type="email" name="Email">
+        <span class="error" id="ErrorEmail"></span>
+      </label>
+      <label>
+        Senha:
+        <input id="Password" type="password" name="Senha">
+        <span class="error" id="ErrorPassword"></span>
+      </label>
+      <label>
+        Repetir senha:
+        <input id="RepeatPassword" type="password" name="RepetirSenha">
+        <span class="error" id="ErrorRepeatPassword"></span>
+      </label>
+
+      <button type="submit">Criar conta</button>
+
+    </form>
+    <div class="ingressar">
+      <a href="index.html">Já possui conta? Acesse aqui</a>
+    </div>
+  </div>
+
+</body>
+
+</html>
