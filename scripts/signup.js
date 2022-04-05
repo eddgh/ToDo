@@ -20,7 +20,7 @@ window.onload = () => {
         let RepeatPassword = validateRepeatPassword();
         if(Name !== null && Nickname !== null && Email !== null && Password !== null && RepeatPassword !== null)
         {
-            let nomeCompleto = Name.trim().split(" ", 2);
+            let nomeCompleto = Name.trim().replace(" ",'1').split("1");
             let entrada = {
                 firstName: nomeCompleto[0],
                 lastName: nomeCompleto[1],
