@@ -20,14 +20,23 @@ window.onload = () => {
         let RepeatPassword = validateRepeatPassword();
         if(Name !== null && Nickname !== null && Email !== null && Password !== null && RepeatPassword !== null)
         {
+            let nomeCompleto = Name.trim().split(" ", 2);
             let entrada = {
-                Name: Name,
-                Nickname: Nickname,
-                Email: Email,
-                Password: Password,
-                RepeatPassword, RepeatPassword
+                firstName: nomeCompleto[0],
+                lastName: nomeCompleto[1],
+                email: Email,
+                password: Password,
             }
-            console.log(JSON.stringify(entrada));
+            fetch("https://ctd-todo-api.herokuapp.com/v1/users",{
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify(entrada)
+            })
+            .then(response=>response.json())
+            .then(obj=> console.log(obj))
+            .catch(error=>console.log(error));
         }
     })
 }

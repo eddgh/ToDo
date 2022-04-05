@@ -104,7 +104,12 @@ let validateRepeatPassword = () => {
     let ErrorPassword = document.getElementById("ErrorRepeatPassword")
     ErrorPassword.innerText = "";
     
-    if (Password.value !== RepeatPassword.value){
+    if(Password.value === ""){
+        ErrorPassword.innerText = "Campo Obrigatorio";
+        InputError(RepeatPassword);
+        return null;
+    }
+    else if (Password.value !== RepeatPassword.value){
         ErrorPassword.innerText = "Senhas não são iguais";
         InputError(RepeatPassword);
         return null;

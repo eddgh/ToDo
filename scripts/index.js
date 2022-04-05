@@ -12,10 +12,19 @@ window.onload = () => {
         if(Email !== null && Password !== null)
         {
             let entrada = {
-                Email: Email,
-                Password: Password,
+                email: Email,
+                password: Password,
             }
-            console.log(JSON.stringify(entrada));
+            fetch("https://ctd-todo-api.herokuapp.com/v1/users/login",{
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify(entrada)
+            })
+            .then(response=>response.json())
+            .then(obj=> console.log(obj))
+            .catch(error=>console.log(error));
         }
     })
 }
