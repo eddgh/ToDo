@@ -116,3 +116,11 @@ let validateRepeatPassword = () => {
     }
     return RepeatPassword.value;
 }
+
+let erros = {
+    "El usuario ya se encuentra registrado": "O usuário já se encontra registrado!",
+    "Alguno de los datos requeridos está incompleto":"Alguns dados estão incompletos!",
+    "Error del servidor": "Erro do servidor!",
+    "Contraseña incorrecta": "Senha está errada!",
+    "El usuario no existe": "O usuário não existe!",
+}
