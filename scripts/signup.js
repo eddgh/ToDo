@@ -2,7 +2,7 @@ if(localStorage.getItem("token") !== null){
     window.location="/tarefas.html"
 }
 
-window.onload = () => {
+window.addEventListener('load', (event) => {
     let name = document.getElementById("Name");
     let nickname = document.getElementById("Nickname");
     let email = document.getElementById("Email");
@@ -32,7 +32,6 @@ window.onload = () => {
         let Email = validateEmail();
         let Password = validatePassword();
         let RepeatPassword = validateRepeatPassword();
-        let ErrorApi = document.getElementById("ErrorAPI");
         clearErrorApi();
         if(Name !== null && Nickname !== null && Email !== null && Password !== null && RepeatPassword !== null)
         {
@@ -43,14 +42,7 @@ window.onload = () => {
                 email: Email,
                 password: Password,
             }
-            fetch("https://ctd-todo-api.herokuapp.com/v1/users",{
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json'
-                },
-                body: JSON.stringify(entrada)
-            })
-            .then(response=>response.json())
+            chamadaApi("users", "POST", entrada, null)
             .then(obj=> {
                 localStorage.setItem("token", obj.jwt);
                 return obj;
@@ -68,4 +60,4 @@ window.onload = () => {
             .catch(error=>console.log(error));
         }
     })
-}
+});

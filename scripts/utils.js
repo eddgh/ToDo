@@ -1,3 +1,5 @@
+let urlApi = "https://ctd-todo-api.herokuapp.com/v1/"
+
 let RemoveInputError  = (input) => {
     if(input.classList.contains("error"))
     {
@@ -115,6 +117,23 @@ let validateRepeatPassword = () => {
         return null;
     }
     return RepeatPassword.value;
+}
+
+let chamadaApi = (path, method, data, headeradd) =>{
+    let body = undefined;
+    if (data !== null) {
+        body = JSON.stringify(data)
+    }
+    let header = {
+        'Content-Type': 'application/json'
+    }
+    header = Object.assign(header, headeradd);
+    return fetch(urlApi + path, {
+        method: method,
+        headers: header,
+        body: body
+    })
+    .then(response=>response.json())
 }
 
 let erros = {

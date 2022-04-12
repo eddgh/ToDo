@@ -21,6 +21,9 @@
 
   <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
 
+  <script src="./scripts/utils.js" defer></script>
+  <script src="./scripts/task.js" defer></script>
+
 
   <title>To-Do App</title>
 </head>
@@ -32,7 +35,7 @@
     </nav>
 
     <div class="user-info">
-      <p>Nome usuário</p>
+      <p id="ExibirNome"></p>
       <div class="user-image"></div>
       <p id="closeApp">Finalizar sessão</i>
       </p>
@@ -42,7 +45,7 @@
 
   <form class="nova-tarefa">
     <div class="not-done "></div>
-    <input id="novaTarea" type="text" placeholder="Nova tarefa">
+    <input id="novaTarefa" type="text" placeholder="Nova tarefa">
     <button type="submit">
       <img src="./assets/plus.png" alt="Adicionar uma nova tarefa">
     </button>
